@@ -6,7 +6,7 @@ import axiosInstance from "../../Utils/axiosInstance";
 import { API_PATHS } from "../../Utils/apiPaths";
 import { UserContext } from "../../Context/userContext";
 
-const Login = ({ setCurrentPage }) => {
+const Login = ({ setCurrentPage, modal }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -54,7 +54,7 @@ const Login = ({ setCurrentPage }) => {
   };
 
   return (
-    <div className="w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center">
+    <div className={`w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center ${!modal&&"mx-auto my-auto shadow-sm h-fit mt-28 bg-slate-50"}`}>
       <h3 className="text-lg font-semibold text-black">Welcome Back</h3>
       <p className="text-xs text-slate-700 mt-[5px] mb-6">
         Please enter your credentials to access your account.

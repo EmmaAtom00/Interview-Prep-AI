@@ -53,9 +53,9 @@ const LandingPage = () => {
         hideHeader
       >
         <div className="">
-          {currentPage === "login" && <Login setCurrentPage={setCurrentPage} />}
+          {currentPage === "login" && <Login setCurrentPage={setCurrentPage} modal />}
           {currentPage === "signup" && (
-            <SIgnUp setCurrentPage={setCurrentPage} />
+            <SIgnUp setCurrentPage={setCurrentPage} modal />
           )}
         </div>
       </Modal>

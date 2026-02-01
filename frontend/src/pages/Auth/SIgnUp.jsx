@@ -7,7 +7,7 @@ import { API_PATHS } from "../../Utils/apiPaths";
 import { useNavigate } from "react-router-dom";
 import uploadImage from "../../Utils/uploadImage";
 
-const SIgnUp = ({ setCurrentPage }) => {
+const SIgnUp = ({ setCurrentPage, modal }) => {
   const [profilePic, setProfilePic] = useState(null);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -78,7 +78,7 @@ const SIgnUp = ({ setCurrentPage }) => {
     }
   };
   return (
-    <div className="w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center">
+    <div className={`w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center ${!modal&&"mx-auto my-auto shadow-sm h-fit mt-3 bg-slate-50"}`}>
       <h3 className="text-xl font-semibold">Create an Account</h3>
       <p className="text-sm text-slate-600 mt-[5px] mb-6">
         Join us today by entering your details below.
