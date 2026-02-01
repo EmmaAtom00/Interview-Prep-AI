@@ -145,8 +145,8 @@ const InterviewPrep = () => {
       fetchSessionDetailsById();
     }
 
-    return () => {};
-  }, []);
+    // return () => {};
+  }, [sessionId]);
   return (
     <DashboardLayout>
       <RoleInfoHeader
@@ -174,7 +174,7 @@ const InterviewPrep = () => {
               {sessionData?.questions?.map((data, index) => {
                 return (
                   <motion.div
-                    key={data._id | index}
+                    key={data._id ?? index}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}

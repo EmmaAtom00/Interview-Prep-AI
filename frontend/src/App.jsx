@@ -30,7 +30,7 @@ const App = () => {
           toastOptions={{
             className: "",
             style: {
-              fontSize: "33px",
+              fontSize: "13px",
             },
           }}
         />

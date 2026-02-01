@@ -1,5 +1,7 @@
 import React from "react";
 import moment from "moment";
+import { LuArrowLeft } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 
 const RoleInfoHeader = ({
   role,
@@ -8,10 +10,15 @@ const RoleInfoHeader = ({
   questions,
   lastUpdate,
 }) => {
+  const navigate = useNavigate()
   return (
     <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between bg-white rounded-xl shadow-xs p-6 gap-6 relative overflow-hidden">
       {/* Left Block - Session Details */}
       <div className="flex-1 flex flex-col gap-3 z-10">
+        <div onClick={()=>navigate("/dashboard")} className="flex items-center gap-2 bg-gray-100/50 rounded-md px-3 py-1 w-fit cursor-pointer">
+        <LuArrowLeft/>
+        {" "}Back
+        </div>
         <h1 className="text-3xl font-extrabold text-gray-900">{role}</h1>
         {topicsToFocus && (
           <p className="text-gray-500 text-sm">{topicsToFocus}</p>
